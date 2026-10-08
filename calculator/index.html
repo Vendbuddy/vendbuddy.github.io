@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vending Machine Payback Calculator</title>
+<meta name="description" content="A simple client-side calculator: enter machine cost, monthly sales, margin, commission and fees to see how many months a vending machine takes to pay back.">
+<link rel="canonical" href="https://vendbuddy.github.io/calculator/">
+<meta name="theme-color" content="#0ea371">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VendBuddy Open Resources">
+<meta property="og:title" content="Vending Machine Payback Calculator">
+<meta property="og:description" content="A simple client-side calculator: enter machine cost, monthly sales, margin, commission and fees to see how many months a vending machine takes to pay back.">
+<meta property="og:url" content="https://vendbuddy.github.io/calculator/">
+<meta property="og:image" content="https://vendbuddy.github.io/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="/"><img src="/assets/icon-128.png" width="36" height="36" alt="" decoding="async"><span>VendBuddy <b>Open Resources</b></span></a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/location-scout/">Location Scout</a><a href="/data/">Data</a><a href="/checklist/">Checklist</a><a href="/calculator/" aria-current="page">Calculator</a></nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="crumbs"><a href="/">Home</a> / Calculator</p>
+<h1>Vending machine payback calculator</h1>
+<p class="lede">Enter your own numbers to see how many months one machine would take to pay for itself. Everything runs in your browser; nothing is sent anywhere.</p>
+<div class="note"><strong>Illustration only.</strong> The starting values are placeholders, not typical or expected results. Real sales, margins and costs vary widely by location, product and operator, and many machines never pay back. This is not financial advice or an income promise.</div>
+<form id="calc" onsubmit="return false">
+<div class="grid2">
+<p><label class="f" for="cost">Machine cost, installed ($)<span class="hint">Purchase price plus delivery, setup and card reader</span></label><input id="cost" type="number" min="0" step="any" value="5000" inputmode="decimal"></p>
+<p><label class="f" for="sales">Gross sales per month ($)<span class="hint">What customers pay, before any costs</span></label><input id="sales" type="number" min="0" step="any" value="1200" inputmode="decimal"></p>
+<p><label class="f" for="margin">Gross margin on product (%)<span class="hint">Sales minus what you paid for the goods</span></label><input id="margin" type="number" min="0" max="100" step="any" value="50" inputmode="decimal"></p>
+<p><label class="f" for="comm">Location commission (% of sales)<span class="hint">Paid to the host; 0 if none</span></label><input id="comm" type="number" min="0" max="100" step="any" value="10" inputmode="decimal"></p>
+<p><label class="f" for="fee">Card processing (% of sales)<span class="hint">Your processor's percentage on card sales</span></label><input id="fee" type="number" min="0" max="100" step="any" value="3" inputmode="decimal"></p>
+<p><label class="f" for="fixed">Other monthly costs ($)<span class="hint">Telemetry, insurance, restocking trips, spoilage, labor you pay for</span></label><input id="fixed" type="number" min="0" step="any" value="75" inputmode="decimal"></p>
+</div>
+</form>
+<div class="result" role="status" aria-live="polite">
+<div class="big" id="payback">-</div>
+<p id="detail"></p>
+</div>
+<h2>How it is calculated</h2>
+<p>Monthly profit = sales x (margin % - commission % - card %) - other monthly costs. Payback months = machine cost / monthly profit. If monthly profit is zero or negative, the machine does not pay back at those numbers. Commission is applied to gross sales; if your agreement uses a different base (net, after tax) adjust the percentage to match.</p>
+<h2>What it leaves out</h2>
+<ul><li>Your time, driving and fuel unless you enter them as a monthly cost.</li><li>Sales tax, income tax, financing interest and repairs.</li><li>Slow starts: new machines often take months to find their level.</li><li>Resale value, and the chance a location is lost.</li></ul>
+<h2>Check your inputs</h2>
+<ul>
+<li><a href="https://vendbuddy.io/blog/vending-machine-profit-margin-explained">Vending machine profit margin explained</a> and the <a href="https://vendbuddy.io/research/vending-machine-profit-margins">profit margins research</a> for margin ranges by product.</li>
+<li><a href="https://vendbuddy.io/blog/vending-machine-monthly-operating-costs">Monthly operating costs</a> for the line items people forget.</li>
+<li><a href="/data/#commission-rates">What public contracts show for commission</a> and the <a href="https://vendbuddy.io/research/vending-commission-rates">full commission report</a>.</li>
+<li><a href="https://vendbuddy.io/blog/how-much-does-it-cost-to-start-a-vending-machine-business">Startup cost guide</a> and the <a href="https://vendbuddy.io/tools/vending-roi-calculator">more detailed ROI calculator</a>.</li>
+<li>Score the spot first with the <a href="/checklist/">location checklist</a>.</li>
+</ul>
+<script>
+(function(){
+function n(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)&&v>=0?v:0;}
+var money=function(x){return '$'+x.toLocaleString('en-US',{maximumFractionDigits:0});};
+function run(){
+var cost=n('cost'),sales=n('sales'),m=n('margin'),c=n('comm'),fee=n('fee'),fixed=n('fixed');
+var net=sales*(m-c-fee)/100-fixed;
+var big=document.getElementById('payback'),d=document.getElementById('detail');
+if(cost<=0){big.textContent='Enter a machine cost';d.textContent='';return;}
+if(net<=0){big.textContent='Does not pay back';d.textContent='At these numbers monthly profit is '+money(net)+'. Raise sales or margin, or cut commission and costs.';return;}
+var mo=cost/net;
+big.textContent=(mo<10?mo.toFixed(1):Math.round(mo))+' months';
+d.textContent='Estimated monthly profit '+money(net)+' ('+money(net*12)+' a year) after commission, card fees and other costs. Illustration only.';
+}
+document.getElementById('calc').addEventListener('input',run);
+run();
+})();
+</script>
+
+</main>
+<footer class="site">
+<div class="wrap">
+<p>Open resources from <a href="https://vendbuddy.io/">VendBuddy</a>, software for vending operators. Source: <a href="https://github.com/vendbuddy/vendbuddy.github.io">vendbuddy.github.io</a>, <a href="https://github.com/vendbuddy/vending-data">vending-data</a>, <a href="https://github.com/vendbuddy/location-scout">location-scout</a>. Questions: hello@vendbuddy.io.</p>
+<p class="small">Informational only, not financial, legal or tax advice. Site code is MIT licensed; the datasets are CC BY 4.0 (credit &quot;VendBuddy, vendbuddy.io&quot;). This site sets no cookies and loads no third-party scripts.</p>
+</div>
+</footer>
+</body>
+</html>

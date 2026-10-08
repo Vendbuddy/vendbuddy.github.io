@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VendBuddy Location Scout: Chrome Extension for Vending Locations</title>
+<meta name="description" content="Location Scout is an open-source Chrome extension that reads the business page you are viewing and says whether the venue tends to suit a vending machine.">
+<link rel="canonical" href="https://vendbuddy.github.io/location-scout/">
+<meta name="theme-color" content="#0ea371">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VendBuddy Open Resources">
+<meta property="og:title" content="VendBuddy Location Scout: Chrome Extension for Vending Locations">
+<meta property="og:description" content="Location Scout is an open-source Chrome extension that reads the business page you are viewing and says whether the venue tends to suit a vending machine.">
+<meta property="og:url" content="https://vendbuddy.github.io/location-scout/">
+<meta property="og:image" content="https://vendbuddy.github.io/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="/"><img src="/assets/icon-128.png" width="36" height="36" alt="" decoding="async"><span>VendBuddy <b>Open Resources</b></span></a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/location-scout/" aria-current="page">Location Scout</a><a href="/data/">Data</a><a href="/checklist/">Checklist</a><a href="/calculator/">Calculator</a></nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="crumbs"><a href="/">Home</a> / Location Scout</p>
+<h1>Location Scout</h1>
+<p class="lede">Open a business website or a map listing, click the toolbar icon, and get a quick read on whether that kind of place tends to work for a vending machine.</p>
+<p><a class="btn" href="#install">How to get it</a> <a class="btn ghost" href="https://github.com/vendbuddy/location-scout">Source code on GitHub</a></p>
+<h2>What it does</h2>
+<ul>
+<li>Reads the business name, ZIP and type from the one page you are on, only when you click the icon.</li>
+<li>Gives a short fit note for that kind of venue and two things to check before you pitch.</li>
+<li>Opens VendBuddy's <a href="https://vendbuddy.io/find-vending-machine-locations">Lead Finder</a> pre-filled with the venue type and ZIP, so you can find the person who approves placements.</li>
+</ul>
+<h2>Privacy by design</h2>
+<ul>
+<li>Manifest V3 with two permissions only: <code>activeTab</code> and <code>scripting</code>.</li>
+<li>No background worker, no stored data, no analytics and no network calls from the extension itself.</li>
+<li>All code ships inside the package, so you can read exactly what runs. Links open <a href="https://vendbuddy.io/">vendbuddy.io</a> in a new tab.</li>
+</ul>
+<p>Full statement: <a href="https://vendbuddy.io/privacy">VendBuddy privacy policy</a>.</p>
+<h2 id="install">Get it</h2>
+<ul>
+<li><strong>Chrome Web Store:</strong> <!-- TODO: replace this span with the Chrome Web Store listing URL once published --><span class="small">listing link coming soon</span></li>
+<li><strong>Load it yourself:</strong> download the <code>extension/</code> folder from the <a href="https://github.com/vendbuddy/location-scout">source repository</a>, open <code>chrome://extensions</code>, switch on Developer mode, choose Load unpacked and select the folder.</li>
+</ul>
+<p class="small">Like every extension, it cannot read <code>chrome://</code> pages, the Web Store or PDFs. In those cases the popup lets you type the details in.</p>
+<h2>Using the fit notes well</h2>
+<p>A fit note is a starting point, not a verdict. Pair it with the <a href="/checklist/">location checklist</a>, then read the matching guide: <a href="https://vendbuddy.io/blog/vending-machine-locations-by-business-type">vending machine locations by business type</a> and <a href="https://vendbuddy.io/blog/worst-vending-machine-locations">locations to avoid</a>.</p>
+
+</main>
+<footer class="site">
+<div class="wrap">
+<p>Open resources from <a href="https://vendbuddy.io/">VendBuddy</a>, software for vending operators. Source: <a href="https://github.com/vendbuddy/vendbuddy.github.io">vendbuddy.github.io</a>, <a href="https://github.com/vendbuddy/vending-data">vending-data</a>, <a href="https://github.com/vendbuddy/location-scout">location-scout</a>. Questions: hello@vendbuddy.io.</p>
+<p class="small">Informational only, not financial, legal or tax advice. Site code is MIT licensed; the datasets are CC BY 4.0 (credit &quot;VendBuddy, vendbuddy.io&quot;). This site sets no cookies and loads no third-party scripts.</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vending Location Scoring Checklist (Printable)</title>
+<meta name="description" content="A 10-point, 20-point-scale checklist for deciding whether a business is a good vending machine location before you pitch it. Works on screen or printed.">
+<link rel="canonical" href="https://vendbuddy.github.io/checklist/">
+<meta name="theme-color" content="#0ea371">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VendBuddy Open Resources">
+<meta property="og:title" content="Vending Location Scoring Checklist (Printable)">
+<meta property="og:description" content="A 10-point, 20-point-scale checklist for deciding whether a business is a good vending machine location before you pitch it. Works on screen or printed.">
+<meta property="og:url" content="https://vendbuddy.github.io/checklist/">
+<meta property="og:image" content="https://vendbuddy.github.io/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="/"><img src="/assets/icon-128.png" width="36" height="36" alt="" decoding="async"><span>VendBuddy <b>Open Resources</b></span></a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/location-scout/">Location Scout</a><a href="/data/">Data</a><a href="/checklist/" aria-current="page">Checklist</a><a href="/calculator/">Calculator</a></nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="crumbs"><a href="/">Home</a> / Checklist</p>
+<h1>Vending location scoring checklist</h1>
+<p class="lede">Score a possible location on ten points, 0 to 2 each. The total tells you whether to pitch it, negotiate harder, or walk away. Fill it in on screen or print it and take it on site.</p>
+<p class="noprint"><button class="btn" type="button" id="print">Print this checklist</button> <button class="btn ghost" type="button" id="reset">Clear</button></p>
+<p class="print-url">vendbuddy.github.io/checklist/ (VendBuddy Open Resources)</p>
+<form id="chk" onsubmit="return false">
+<p><label class="f" for="site">Location name or address (optional, stays in your browser)</label><input id="site" type="text" style="width:100%;font:inherit;padding:.5rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--tx)"></p>
+<fieldset><legend>1. Foot traffic</legend><p>How many different people are on site on a normal day?</p><div class="opts"><label><input type="radio" name="q0" value="0" data-score> <span>0 points: Fewer than 50</span></label><label><input type="radio" name="q0" value="1" data-score> <span>1 point: 50 to 200</span></label><label><input type="radio" name="q0" value="2" data-score> <span>2 points: More than 200</span></label></div></fieldset>
+<fieldset><legend>2. Dwell time</legend><p>Do people wait or stay long enough to want something?</p><div class="opts"><label><input type="radio" name="q1" value="0" data-score> <span>0 points: Pass through in minutes</span></label><label><input type="radio" name="q1" value="1" data-score> <span>1 point: Short breaks</span></label><label><input type="radio" name="q1" value="2" data-score> <span>2 points: Long waits, shifts or stays</span></label></div></fieldset>
+<fieldset><legend>3. Nearby alternatives</legend><p>How far is the nearest place to buy food or a drink?</p><div class="opts"><label><input type="radio" name="q2" value="0" data-score> <span>0 points: Right next door</span></label><label><input type="radio" name="q2" value="1" data-score> <span>1 point: A short walk</span></label><label><input type="radio" name="q2" value="2" data-score> <span>2 points: Nothing close, or closed when they need it</span></label></div></fieldset>
+<fieldset><legend>4. Hours of activity</legend><p>When is the place busy?</p><div class="opts"><label><input type="radio" name="q3" value="0" data-score> <span>0 points: Office hours only</span></label><label><input type="radio" name="q3" value="1" data-score> <span>1 point: Extended hours</span></label><label><input type="radio" name="q3" value="2" data-score> <span>2 points: Evenings, nights or weekends too</span></label></div></fieldset>
+<fieldset><legend>5. Decision-maker</legend><p>Can you reach the person who approves placements?</p><div class="opts"><label><input type="radio" name="q4" value="0" data-score> <span>0 points: No idea who</span></label><label><input type="radio" name="q4" value="1" data-score> <span>1 point: Know the role, no contact</span></label><label><input type="radio" name="q4" value="2" data-score> <span>2 points: Have a name and a way to reach them</span></label></div></fieldset>
+<fieldset><legend>6. Space and power</legend><p>Is there a spot with an outlet, clear floor and door clearance?</p><div class="opts"><label><input type="radio" name="q5" value="0" data-score> <span>0 points: No suitable spot</span></label><label><input type="radio" name="q5" value="1" data-score> <span>1 point: Needs changes</span></label><label><input type="radio" name="q5" value="2" data-score> <span>2 points: Ready, with an outlet nearby</span></label></div></fieldset>
+<fieldset><legend>7. Restocking access</legend><p>Can you get product in during open hours without a fight?</p><div class="opts"><label><input type="radio" name="q6" value="0" data-score> <span>0 points: Hard (stairs, no parking, no access)</span></label><label><input type="radio" name="q6" value="1" data-score> <span>1 point: Workable with planning</span></label><label><input type="radio" name="q6" value="2" data-score> <span>2 points: Easy loading and short carry</span></label></div></fieldset>
+<fieldset><legend>8. Visibility and security</legend><p>Will people see the machine, and will it be safe?</p><div class="opts"><label><input type="radio" name="q7" value="0" data-score> <span>0 points: Hidden or unsupervised</span></label><label><input type="radio" name="q7" value="1" data-score> <span>1 point: Some foot traffic or cameras</span></label><label><input type="radio" name="q7" value="2" data-score> <span>2 points: Visible, supervised, well lit</span></label></div></fieldset>
+<fieldset><legend>9. Existing machines</legend><p>Is there already a machine or an exclusive contract?</p><div class="opts"><label><input type="radio" name="q8" value="0" data-score> <span>0 points: Locked in with another company</span></label><label><input type="radio" name="q8" value="1" data-score> <span>1 point: A machine you could replace</span></label><label><input type="radio" name="q8" value="2" data-score> <span>2 points: None</span></label></div></fieldset>
+<fieldset><legend>10. Payments and signal</legend><p>Will a card reader get a connection, and are people likely to pay by card?</p><div class="opts"><label><input type="radio" name="q9" value="0" data-score> <span>0 points: No signal, cash only crowd</span></label><label><input type="radio" name="q9" value="1" data-score> <span>1 point: Spotty signal</span></label><label><input type="radio" name="q9" value="2" data-score> <span>2 points: Good signal, card-friendly crowd</span></label></div></fieldset>
+<div class="score" role="status" aria-live="polite"><strong>Score:</strong> <output id="total">0</output> / 20 <span id="verdict"></span></div>
+</form>
+<h2>Reading your score</h2>
+<table><thead><tr><th>Score</th><th>What to do</th></tr></thead><tbody>
+<tr><td>16 to 20</td><td>Strong candidate. Book the conversation and prepare a clear proposal.</td></tr>
+<tr><td>11 to 15</td><td>Workable. Fix the low scores first (space, access, payments) or negotiate terms that reflect them.</td></tr>
+<tr><td>0 to 10</td><td>Probably not worth the machine or the time. Revisit only if something changes.</td></tr>
+</tbody></table>
+<p class="small">A zero on foot traffic or on decision-maker access usually matters more than the total, so treat either as a stop sign until you have an answer. The scale is a judgement aid, not a prediction of sales.</p>
+<h2>Go deeper</h2>
+<ul>
+<li><a href="https://vendbuddy.io/blog/vending-machine-locations-by-business-type">Vending machine locations by business type</a>: which kinds of places tend to suit which machines.</li>
+<li><a href="https://vendbuddy.io/blog/worst-vending-machine-locations">Worst vending machine locations</a>: patterns that look good and are not.</li>
+<li><a href="https://vendbuddy.io/blog/essentials-to-land-vending-locations-2026">What you need to land locations</a> and <a href="https://vendbuddy.io/blog/how-to-cold-call-vending-machine-locations">how to cold call them</a>.</li>
+<li><a href="https://vendbuddy.io/blog/vending-location-objections-what-they-mean">Location objections and what they really mean</a> for the conversation itself.</li>
+<li><a href="https://vendbuddy.io/vending-laws">Vending laws by state</a> and the <a href="https://vendbuddy.io/property-managers">property manager page</a> for the other side of the table.</li>
+<li><a href="https://vendbuddy.io/tools/location-value-calculator">Location value calculator</a> to estimate what a spot could be worth.</li>
+<li>Check what others are paying: <a href="/data/#commission-rates">public contract commission rates</a>.</li>
+</ul>
+<script>
+(function(){
+var f=document.getElementById('chk'),out=document.getElementById('total'),v=document.getElementById('verdict'),site=document.getElementById('site');
+function calc(){var t=0,n=0;f.querySelectorAll('input[data-score]:checked').forEach(function(i){t+=+i.value;n++;});out.textContent=t;
+v.textContent=n<10?'('+n+' of 10 answered)':(t>=16?'Strong candidate':t>=11?'Workable, fix the weak points':'Probably pass');}
+f.addEventListener('change',calc);
+document.getElementById('print').addEventListener('click',function(){window.print();});
+document.getElementById('reset').addEventListener('click',function(){f.reset();calc();});
+calc();
+})();
+</script>
+
+</main>
+<footer class="site">
+<div class="wrap">
+<p>Open resources from <a href="https://vendbuddy.io/">VendBuddy</a>, software for vending operators. Source: <a href="https://github.com/vendbuddy/vendbuddy.github.io">vendbuddy.github.io</a>, <a href="https://github.com/vendbuddy/vending-data">vending-data</a>, <a href="https://github.com/vendbuddy/location-scout">location-scout</a>. Questions: hello@vendbuddy.io.</p>
+<p class="small">Informational only, not financial, legal or tax advice. Site code is MIT licensed; the datasets are CC BY 4.0 (credit &quot;VendBuddy, vendbuddy.io&quot;). This site sets no cookies and loads no third-party scripts.</p>
+</div>
+</footer>
+</body>
+</html>
